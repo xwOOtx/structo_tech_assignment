@@ -10,3 +10,12 @@ export const login = async (req: Request, res: Response) => {
     return res.status(500).send(getErrorMessage(error));
   }
 };
+
+export const refreshJwtToken = async (req: Request, res: Response) => {
+  try {
+    const token = userServices.refreshJwtToken(req.body);
+    res.status(200).send(token);
+  } catch (error) {
+    return res.status(401).send(getErrorMessage(error));
+  }
+}
