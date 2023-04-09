@@ -1,8 +1,6 @@
-import jwt from "jsonwebtoken";
-import { uid } from 'rand-token';
 import { usersDB } from "./usersDB";
 import { IUser } from "./user.interface";
-import { generateJwt } from "../auth";
+import { generateJwt, generateRefreshToken } from "../auth";
 
 export function login(user: IUser) {
   const username = user.username;
@@ -15,7 +13,7 @@ export function login(user: IUser) {
   /// generate token
   const accessToken = generateJwt(foundUser);
   
-  const refreshToken = uid(256);
+  const refreshToken = generateRefreshToken(foundUser);
 
   /// update DB with tokens info
   usersDB.map(userDB => {
@@ -32,7 +30,7 @@ export function login(user: IUser) {
   }
 }
 
-export function refreshJwtToken(user: IUser) {
+export function refreshJwt(user: IUser) {
   const username = user.username;
   const refreshToken = user.refreshToken;
 

@@ -11,9 +11,9 @@ export const login = async (req: Request, res: Response) => {
   }
 };
 
-export const refreshJwtToken = async (req: Request, res: Response) => {
+export const refreshJwt = async (req: Request, res: Response) => {
   try {
-    const token = userServices.refreshJwtToken(req.body);
+    const token = userServices.refreshJwt(req.body);
     res.status(200).send(token);
   } catch (error) {
     return res.status(401).send(getErrorMessage(error));
