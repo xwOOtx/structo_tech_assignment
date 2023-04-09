@@ -3,6 +3,7 @@ import express from 'express';
 import * as dotenv from "dotenv";
 import helmet from "helmet";
 import { userRouter } from './user/user.router';
+import { aboutRouter } from './about/about.router';
 
 dotenv.config();
 
@@ -26,3 +27,4 @@ const server = app.listen(PORT, () => {
 // Send message for default URL
 app.get('/', (req, res) => res.send('Structo Technical Assignment'));
 app.use(userRouter);
+app.use(aboutRouter);
