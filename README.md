@@ -53,7 +53,7 @@ npm run test:integration:user
   - Header: - `Authorization: string` (required)
 - Reponse:
   - Body:
-    - `Hellow World`
+    - `Hello World`
 
 ## Using the REST API
 
