@@ -20,7 +20,7 @@ reponse:
 "Hello World"
 }
 
-POST /token/refresh
+POST /refreshToken
 request body:
 {
 username: string,
@@ -39,7 +39,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
 GET /about
 curl -XGET -H 'Authorization: "accessTokenFromLogin"' -H "Content-type: application/json" 'http://localhost:3000/about'
 
-POST /token/refresh
+POST /refreshToken
 curl -XPOST -H 'Authorization: accessTokenFromLogin' -H "Content-type: application/json" -d '{
 "username": "structo_user",
 "refreshToken": "refreshTokenFromLogin"

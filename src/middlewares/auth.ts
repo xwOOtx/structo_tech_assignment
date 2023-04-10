@@ -1,6 +1,6 @@
 import jwt, { JwtPayload } from 'jsonwebtoken';
 import { Request, Response, NextFunction } from 'express';
-import { UserModel } from './user/user.model';
+import { UserModel } from '../user/user.model';
 
 export interface CustomRequest extends Request {
   token: string | JwtPayload;
