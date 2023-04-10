@@ -28,3 +28,5 @@ const server = app.listen(PORT, () => {
 app.get('/', (req, res) => res.send('Structo Technical Assignment'));
 app.use(userRouter);
 app.use(aboutRouter);
+
+export default app;
