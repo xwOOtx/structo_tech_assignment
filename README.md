@@ -62,15 +62,15 @@ npm run test:integration:user
 curl -XPOST -H "Content-type: application/json" -d '{
 "username": "structo_user",
 "password": "NotAStrongPassword"
-}' 'http://localhost:3000/token'
+}' 'http://localhost:{PORT}/token'
 
 ### POST /refreshToken
 
 curl -XPOST -H 'Authorization: accessTokenFromLogin' -H "Content-type: application/json" -d '{
 "username": "structo_user",
 "refreshToken": "refreshTokenFromLogin"
-}' 'http://localhost:3000/token'
+}' 'http://localhost:{PORT}/token'
 
 ### GET /about
 
-curl -XGET -H 'Authorization: "accessTokenFromLogin"' -H "Content-type: application/json" 'http://localhost:3000/about'
+curl -XGET -H 'Authorization: "accessTokenFromLogin"' -H "Content-type: application/json" 'http://localhost:{PORT}/about'
