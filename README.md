@@ -69,7 +69,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
 curl -XPOST -H 'Authorization: accessTokenFromLogin' -H "Content-type: application/json" -d '{
 "username": "structo_user",
 "refreshToken": "refreshTokenFromLogin"
-}' 'http://localhost:{PORT}/token'
+}' 'http://localhost:{PORT}/refreshToken'
 
 ### GET /about
 
