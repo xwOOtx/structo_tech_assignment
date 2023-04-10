@@ -1,6 +1,7 @@
 import { usersDB } from "./usersDB";
 import { IUser } from "./user.interface";
-import { generateJwt, generateRefreshToken } from "../middlewares/auth";
+import { generateRefreshToken } from "../services/generateRefreshToken";
+import { generateJwt } from "../services/generateJwt";
 
 export function login(user: IUser) {
   const username = user.username;
